@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Radio and Checkboxes</title>
+    </head>
+    <body>
+    <p>
+        <h3>Sign Up:</h3>
+        <form>
+            <label for="first_name">First name: </label>
+            <input id="first_name" type="text" name="FirstName" placeholder="First Name" required>
+            <label for="last_name">Last name: </label>
+            <input id="last_name" type="text" name="LastName"placeholder="Last Name" required><br>
+            <label for="email">Email: </label>
+            <input id="email" type="email" name="Email" placeholder="Email" required><br>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="Password" placeholder="Password"><br>
+
+
+            <!-- Radio Buttons -->
+            <h4>Gender:</h4>
+            <!--
+                1. When type="radio", name needs to be the same in order for the
+                   user to pick one or the other. Otherwise both will be pickable.
+
+                2. If the value attribute is left empty, then the form submits
+                   either "on" or "off". For radio buttobs below, the form would
+                   submit "male" or "female".
+
+                3. The name needs to have something in every part of the form.
+                   When the form submits, it shows up as "$name:$value".
+                   For the below example, it will come up as "gender:male"
+            -->
+            <label for="male">Male</label> <input id="male" type="radio" name="Gender" value="Male">
+            <label for="female">Female</label> <input id="female" type="radio" name="Gender" value="Female">
+            <br>
+
+            <!-- Dropdown menu -->
+
+            <label for="state">State:</label>
+            <select id="state" class="state" name="State">
+                <!--
+                    When value attribute is empty, the form will send anything between
+                    the <option> tags. For below option, if New South Wales was to
+                    be selected, "NSW" would be sent. However if "value" attribute
+                    was not present, then "New%20South%20Wales" would have been sent.
+                -->
+                <option value="NSW">New South Wales</option>
+                <option value="QLD">Queensland</option>
+                <option value="VIC">Victoria</option>
+                <option value="TAS">Tasmania</option>
+                <option value="SA">South Australia</option>
+                <option value="WA">Western Australia</option>
+                <option value="NT">Northern Territory</option>
+                <option value="ACT">Australian Capital Territory</option>
+
+                </optgroup>
+            </select>
+            <br>
+
+            <!-- Bigger text input -->
+            <label for="bio">Bio:</label><br>
+            <textarea id="bio" name="Bio" rows="8" cols="80" placeholder="Write something about yourself."></textarea>
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </p>
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple form</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form class="login" action="form.html" method="post">
+            <label for="email">
+                Email
+            </label>
+                <!-- 1. Validation: write "required" or "type="email"" for chrome to yell at the user -->
+                <input type="email" id="email" placeholder="email" name="email" required>
+
+            <label>
+                Password
+                <!-- 2. for password, include the "required" attribute. Chrome will yell at the user for not including it -->
+                <input type="password" placeholder="Password" name="Password" value="" required>
+            <input type="submit">
+            </label>
+        </form>
+
+
+    </body>
+</html>

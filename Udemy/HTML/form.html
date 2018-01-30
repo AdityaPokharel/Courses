@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple form</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form class="login" action="form.html" method="post">
+            <!-- 1. This "for" attribute references the "id" of the text input field. -->
+            <label for="username">
+                Username
+            </label>
+                <input type="text" id="username" placeholder="Username" name="Username" required>
+
+            <!-- 2. Alternatively, the input field can be nested inside of the label tag like this: -->
+            <!-- 3. However, the first method is preferred. -->
+            <label>
+                Password
+                <input type="password" placeholder="Password" name="Password" value="">
+            <input type="submit">
+            </label>
+        </form>
+
+
+    </body>
+</html>
