@@ -1,0 +1,27 @@
+
+h1 {
+    color: rgba(0, 200, 100, 0.8);
+
+    /* All three of the following are needed for border to show! */
+    /* border-color: purple;
+    border-width: 5px;
+    border-style: solid; */
+
+    /* Alternatively, you can use one command instead of three commands above. */
+    border: 5px solid rgb(255, 100, 80);
+}
+
+h4 {
+    background: rgb(200, 100, 80);
+}
+
+body {
+
+    background: pink;
+
+    /* Background can also be changed to images. */
+    /* background: url("https://static.pexels.com/photos/172289/pexels-photo-172289.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
