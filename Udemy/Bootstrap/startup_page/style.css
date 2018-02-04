@@ -1,0 +1,11 @@
+#title-content {
+    color: #DDDDDD;
+    text-align: center;
+    padding-top: 25%;
+}
+
+body {
+    background: url(https://source.unsplash.com/TdX67igK0vw);
+    background-size: cover;
+    background-position:center;
+}
