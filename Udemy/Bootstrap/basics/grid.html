@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Grid Demo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <style media="screen">
+            .pink {
+                background: pink;
+                border: 1px solid purple;
+            }
+            .orange {
+                background: orange;
+                border: 1px dotted black
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!-- You can also remove the col-lg-3 below and since col-md-3 is there, Bootstrap will take what we set for medium and set it to large -->
+                <div class="col-lg-3 col-md-3 col-sm-6 pink">
+                    <div class="row">
+                        <div class="col-lg-6 orange"> First Half </div>
+                        <div class="col-lg-6 orange"> Second Half </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 pink">COL LG 1</div>
+                <div class="col-lg-3 col-md-3 col-sm-6 pink">COL LG 1</div>
+                <div class="col-lg-3 col-md-3 col-sm-6 pink">COL LG 1</div>
+
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-6 pink">COL LG 6</div>
+                <div class="col-lg-6 pink">COL LG 6</div>
+            </div> -->
+        </div>
+    </body>
+</html>

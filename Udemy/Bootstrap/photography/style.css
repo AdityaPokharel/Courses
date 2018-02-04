@@ -1,0 +1,22 @@
+.jumbotron {
+    color: #2C3E50;
+    background: #ECF0F1;
+}
+
+.navbar-inverse {
+    background: #2C3E50;
+
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-brand:hover {
+    color: #BFBFBF;
+}
+
+/* .navbar-inverse .navbar-brand {
+    color: white;
+} */
