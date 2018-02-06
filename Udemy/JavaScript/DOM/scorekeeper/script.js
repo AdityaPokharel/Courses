@@ -35,6 +35,5 @@ reset.addEventListener("click", function() {
 
 inp.addEventListener("input", function() {
     max = inp.value;
-    label.innerText = "Playing to: " + max;
 
 });
