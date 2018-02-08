@@ -1,0 +1,24 @@
+.square {
+    width:80%;
+    padding-bottom: 80%;
+    border-radius: 20%;
+    margin: 30 auto;
+    text-align: center;
+    font-size: 300%;
+}
+
+
+#titlearea {
+    text-align: center;
+    background-color: #66afe9;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.page-title {
+    font-weight: lighter;
+}
+
+.bar {
+    background-color: white;
+}
