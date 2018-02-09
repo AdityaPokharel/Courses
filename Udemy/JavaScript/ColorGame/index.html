@@ -2,67 +2,42 @@
     <head>
         <meta charset="utf-8">
         <title>The Color Guessing Game</title>
-        <link rel="stylesheet" href="Bootstrap/bootstrap.css">
+        <!--<link rel="stylesheet" href="Bootstrap/bootstrap.css">-->
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 
-        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
+        <!--<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
     </head>
     <body>
-    <div id="titlearea">
-        <div class="container">
-            <div class="row col-lg-12"><h2 class="page-title">THE GREAT</h2></div>
-            <div class="row col-lg-12"><h1 id="rgbValue"></h1></div>
-            <div class="row col-lg-12"><h2 class="page-title">GUESSING GAME</h2></div>
-
-            <div class="row">
-                    <div class="col-sm-1"><a href="#">NEW COLOURS</a></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-1"></div>
+        <div id="around-title">
+            <div id="title-area">
+                <h1>THE GREAT</h1>
+                <h2 id="rgb-text-area"></h2>
+                <h1>COLOR GAME</h1>
             </div>
-        </div>
-    </div>
 
-        <div class="container" id="bodyArea">
-
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <div class="square" id="option1"></div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="square" id="option2"></div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="square" id="option3"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <div class="square" id="option4"></div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="square" id="option5"></div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="square" id="option6"></div>
+            <div id="nav-background">
+                <div id="nav-area">
+                        <h3>
+                            <span id="restart">Restart</span>
+                            <span id="status"></span>
+                            <span id="difficulty"></span>
+                        </h3>
                 </div>
             </div>
 
         </div>
 
+        <div id="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
 
-        <script src="jquery/jquery.js"></script>
-        <script src="Bootstrap/bootstrap.js"></script>
-        <script src="script.js"></script>
+
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

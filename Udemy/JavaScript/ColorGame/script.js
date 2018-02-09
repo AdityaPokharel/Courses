@@ -1,36 +1,72 @@
-var rgbTextArea = document.querySelector("#rgbValue");
+
+startOver();
 
 
-/* Create 6 random RGB values */
-var rgbValues = [];
-for(var i = 0; i < 6; i++) {
-    var red = Math.floor(Math.random() * 256);
-    var green = Math.floor(Math.random() * 256);
-    var blue = Math.floor(Math.random() * 256);
-    rgbValues.push([red, green, blue]);
-}
 
 
-/* Choose one of the random RGB values */
-var chosenRgbIndex = Math.floor(Math.random() * 6);
+function startOver() {
 
-// TODO: remove this.
-rgbTextArea.innerHTML = "RGB(" + rgbValues[chosenRgbIndex][0] + ", " + rgbValues[chosenRgbIndex][1] + ", " + rgbValues[chosenRgbIndex][2] + ");";
+    var colors = ["rgb(255, 0, 0)",
+            "rgb(255, 0, 0)",
+            "rgb(255, 0, 0",
+            "rgb(255, 0, 0)",
+            "rgb(255, 0, 0",
+            "rgb(255, 0, 0)"];
 
-var squares = document.querySelectorAll(".square");
-for(var i = 0; i < squares.length; i++) {
-    squares[i].setAttribute("style", "background-color: rgb(" + rgbValues[i][0] + ", " + rgbValues[i][1] + ", " + rgbValues[i][2] + ")");
-    // squares[i].innerHTML = rgbValues[i];
-    var s = i;
-    var chosenSquare = document.querySelectorAll(".square")[chosenRgbIndex];
-    squares[i].addEventListener("click", function () {
-        console.log("this = " + this + " chosen = " + chosenSquare);
-        if(this === chosenSquare) {
-            this.innerHTML = "<i class=\"fas fa-check\"></i>";
-            document.location.reload();
-        }
-        else {
-            this.innerHTML = "<i class=\"fas fa-times\"></i>"
-        }
+
+    // pick random color
+    for(var i = 0; i < 6; i++){
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        colors[i] = "rgb(" + red + ", " + green + ", " + blue + ")";
+    }
+
+    // select the squares
+    var squares = document.querySelectorAll(".square");
+
+    // pick one of the squares in random
+    var chosenColorIndex = Math.floor(Math.random() * 6);
+    var chosenColor = colors[chosenColorIndex];
+
+    // apply colours to the square
+    var bodyElement = document.querySelector("body");
+    var statusDisplay = document.querySelector("#status");
+    var restartButton = document.querySelector("#restart");
+    restartButton.addEventListener("click", function() {
+        startOver();
     });
+
+    for(var i = 0; i < 6; i++) {
+        squares[i].style.backgroundColor = colors[i];
+
+        // Add click actions to each square
+        squares[i].addEventListener("click", function() {
+            var current = this.style.backgroundColor;
+            var picked = chosenColor;
+
+            // If the
+            if(current === picked){
+                statusDisplay.innerHTML("You Got It!");
+                restartButton.innerHTML = "Play Again";
+            }
+
+            else {
+                this.style.backgroundColor = "#424242";
+                statusDisplay.innerHTML = "Try Again!";
+                statusDisplay.className = "shake";
+                setTimeout(function() {
+                    statusDisplay.innerHTML="";
+                    statusDisplay.className = "";
+                }, 1000);
+
+            }
+        });
+    }
+
+    // select the title area and add the randomly selected colour in the html.
+    var rgbTextArea = document.querySelector("#rgb-text-area");
+    rgbTextArea.innerHTML = chosenColor.toUpperCase();
 }
+
+
