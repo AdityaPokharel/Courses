@@ -1,14 +1,17 @@
 var express = require("express");
 var app = express();
 
+app.use(express.static("public"));
+app.set("view engine", "ejs"); // you won't have to add '.ejs' when you use response.render("home.ejs")
+
 app.get("/", function(request, response){
-    response.render("home.ejs");
+    response.render("home");
 });
 
 app.get("/fallinlovewith/:thing", function(request, response){
     // response.send("You fell in love with " + request.params.thing);
     var thing = request.params.thing;
-    response.render("love.ejs", {thingVar: thing} );
+    response.render("love", {thingVar: thing} );
 
 });
 
