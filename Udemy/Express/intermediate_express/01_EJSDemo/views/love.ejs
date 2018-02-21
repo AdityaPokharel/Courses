@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Love Page</title>
+    </head>
+    <body>
+        <h1>You fell in love with: <%= thingVar.toUpperCase() %></h1>
+        <h3>P.S. this is the love.ejs file.</h3>
+
+        <% if(thingVar.toUpperCase() === "DOG"){ %>
+            <p>Good Choice! Dogs are the best!!!</p>
+        <%}%>
+    </body>
+</html>
