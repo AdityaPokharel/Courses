@@ -1,0 +1,11 @@
+<h1>Results</h1>
+<h3><a href="/">Search Again</a></h3>
+<ul>
+
+    <% for(movie of data["Search"]){ %>
+        <li>
+            <%= movie["Title"] %> - <%= movie["Year"] %>
+        </li>
+    <% } %>
+
+</ul>
