@@ -10,21 +10,25 @@ app.use(bodyParser.urlencoded({extended: true}));
 // SCHEMA SETUP
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create({
-//     name: "Greenie Creek",
-//     image: "http://www.bassettcreekwmo.org/application/files/1514/5676/5130/PlymouthCreek-BassettCreekWatershed.jpg"},
+//     name: "Granite Hill",
+//     image: "http://www.bassettcreekwmo.org/application/files/1514/5676/5130/PlymouthCreek-BassettCreekWatershed.jpg",
+//     description: "This is a huge granite hill, no bathrooms. No water. Beautiful granite!"
+    
+//     },
 //     function(err, campground) {
 //         if(err) {
 //             console.log(err);
 //         }
 //         else {
 //             console.log("NEWLY CREATED CAMPGROUND");
-//             console.log(campground);
+//             // console.log(campground);
 //         }
 //     }
 // )
@@ -54,7 +58,7 @@ app.get("/campgrounds", (req, res) => {
         if(err){
             console.log(err);
         } else {
-            res.render("campgrounds.ejs", {campgrounds: allCampgrounds});  // {name you want to give it: the variable you want to pass}
+            res.render("index.ejs", {campgrounds: allCampgrounds});  // {name you want to give it: the variable you want to pass}
         }
     })
 
@@ -68,7 +72,8 @@ app.get("/campgrounds/new", (req, res) => {
 app.post("/campgrounds", (req, res) => {
     let name = req.body.name;
     let image = req.body.image;
-    let newCampground = {name: name, image: image};
+    let desc = req.body.description;
+    let newCampground = {name: name, image: image, description: desc};
     // Create a new campground and save it to the DB.
     Campground.create(newCampground, function(err, newlyCreated) {
         if(err) {
@@ -80,6 +85,21 @@ app.post("/campgrounds", (req, res) => {
     });
 
 });
+
+
+// This needs to be below "/campgrounds/new", otherwise node will think "new" is just an id variable.
+app.get("/campgrounds/:id", function(req, res){
+    // Find the campground with the provided ID.
+    Campground.findById(req.params.id, function(err, foundCampground) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("show.ejs", {campground: foundCampground});
+        }
+    });
+    // 
+})
+
 
 app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server is running...");
