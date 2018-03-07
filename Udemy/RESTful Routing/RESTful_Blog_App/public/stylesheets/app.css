@@ -1,3 +1,30 @@
 i.icon {
     font-size: 1.5em;
 }
+
+.container.main {
+    margin-top: 7em;
+}
+
+#delete {
+    display: inline;
+}
+
+#dateDisplay {
+    text-align: right;
+    color: #999999;
+}
+
+#blogBody {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    background: #F0F0F0;
+}
+
+#readMoreIcon,
+#editIcon,
+#deleteIcon {
+    font-size: 1em;
+}

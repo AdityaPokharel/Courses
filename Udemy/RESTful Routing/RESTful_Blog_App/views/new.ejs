@@ -1,0 +1,26 @@
+<% include ./partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Blog Post</div>
+    <% if(typeof errorMessage != 'undefined') { %>
+        <p><%= errorMessage %></p>
+    <% } %>
+    <form class="ui form" action="/blogs" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]" placeholder="title"></input>
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="blog[image]" placeholder="image"></input>
+        </div>
+        <div class="field">
+            <label>Blog Content</label>
+            <textarea name="blog[body]"></textarea>
+        </div>
+        <button class="ui basic blue button" type="submit">Submit</button>
+    </form>
+</div>
+
+
+<% include ./partials/footer.ejs %>
